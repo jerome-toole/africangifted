@@ -31,7 +31,6 @@ function unhook_parent_googlefonts() {
 add_action( 'wp_enqueue_scripts', 'unhook_parent_googlefonts', 20 );
 
 
-
 // ADD BITTER AND LATO FONTS
 function wpb_add_google_fonts() {
 wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Bitter:400,700|Lato:400,400i,700,700i', false ); 
@@ -40,6 +39,11 @@ wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Bi
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
 
-// Add Custom Header
-// require get_stylesheet_directory_uri() . '/inc/custom-header.php';
+add_action('wp_enqueue_scripts', 'africangifted_enqueue_scripts');
 
+function africangifted_enqueue_scripts() {
+  // Enqueue Sticky Header scripts
+  wp_enqueue_script('waypoints', get_stylesheet_directory_uri() . '/js/waypoints.min.js', array('jquery'));
+  wp_enqueue_script('waypoints-sticky', get_stylesheet_directory_uri() . '/js/sticky.min.js', array('waypoints'));
+  wp_enqueue_script('africangifted-functions', get_stylesheet_directory_uri() . '/js/functions.js', array('jquery', 'waypoints' ));
+};
