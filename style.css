@@ -120,12 +120,12 @@ body {
 }
 
 a {
-  color: #ca3c08;
+  color: #831559;
   text-decoration: none;
 }
 
 a:visited {
-  color: #ac0404;
+  color: #6f164d;
 }
 
 a:focus {
@@ -134,7 +134,7 @@ a:focus {
 
 a:active,
 a:hover {
-  color: #ea9629;
+  color: #6f164d;
   outline: 0;
 }
 
@@ -905,11 +905,13 @@ ul.nav-menu,
 div.nav-menu > ul {
   margin: 0 auto;
   padding: 0;
+  font-size: 0;
 }
 
 .nav-menu li {
   display: inline-block;
   position: relative;
+  font-size: 1rem;
 }
 
 .nav-menu li a {
@@ -1112,7 +1114,7 @@ ul.nav-menu .focus > ul,
 .home .entry-header div.splash-quote::before {
   content: '“';
   left: -0.09em;
-  top: -0.55em;
+  top: -0.58em;
 }
 
 
@@ -1161,7 +1163,7 @@ ul.nav-menu .focus > ul,
 }
 
 .entry-title a:hover {
-  color: #ea9629;
+  color: #6f164d;
 }
 
 
@@ -1259,7 +1261,7 @@ ul.nav-menu .focus > ul,
 
 .entry-content a:hover,
 .comment-content a:hover {
-  color: #ea9629;
+  color: #6f164d;
 }
 
 .entry-content .more-link {
@@ -1357,7 +1359,7 @@ footer.entry-meta {
 }
 
 .hentry .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: #ea9629;
+  background: #6f164d;
 }
 
 .hentry .mejs-controls .mejs-time-rail .mejs-time-total,
@@ -1668,7 +1670,7 @@ footer.entry-meta {
 }
 
 .format-link .entry-title {
-  color: #ca3c08;
+  color: #831559;
   display: inline;
   font-size: 20px;
   font-weight: 300;
@@ -1924,7 +1926,7 @@ footer.entry-meta {
 .attachment .entry-meta a,
 .attachment .entry-meta .edit-link:before,
 .attachment .full-size-link:before {
-  color: #ca3c08;
+  color: #831559;
 }
 
 .attachment .entry-content {
@@ -2023,7 +2025,7 @@ footer.entry-meta {
 }
 
 .navigation a:hover {
-  color: #ea9629;
+  color: #6f164d;
   text-decoration: none;
 }
 
@@ -2075,13 +2077,13 @@ footer.entry-meta {
 }
 
 .paging-navigation a:hover .meta-nav {
-  background-color: #ea9629;
+  background-color: #6f164d;
   text-decoration: none;
 }
 
 .post-navigation {
   background-color: #fff;
-  color: #ca3c08;
+  color: #831559;
   font-size: 20px;
   font-style: italic;
   font-weight: 300;
@@ -2142,7 +2144,7 @@ footer.entry-meta {
 }
 
 .author-link {
-  color: #ca3c08;
+  color: #831559;
   margin-left: 2px;
 }
 
@@ -2387,7 +2389,7 @@ footer.entry-meta {
 }
 
 .comment-meta a:hover {
-  color: #ea9629;
+  color: #6f164d;
 }
 
 .comment-metadata {
@@ -2579,13 +2581,13 @@ footer.entry-meta {
  */
 
 .widget {
-  background-color: #f7e7f1;
+  background-color: #f1f1f1;
   font-size: 14px;
   -webkit-hyphens: auto;
   -moz-hyphens:    auto;
   -ms-hyphens:     auto;
   hyphens:         auto;
-  margin: 0 0 24px;
+  margin: 0;
   padding: 20px;
   word-wrap: break-word;
 }
@@ -2634,7 +2636,7 @@ footer.entry-meta {
 }
 
 .widget a:hover {
-  color: #ea9629;
+  color: #6f164d;
 }
 
 /* Search widget */
@@ -2702,6 +2704,7 @@ footer.entry-meta {
   color: #686758;
   font-size: 14px;
   text-align: center;
+  padding: 2em 0;
 }
 
 .site-footer .widget-area,
@@ -2715,7 +2718,6 @@ footer.entry-meta {
 
 .site-footer .sidebar-container {
   background-color: #382c6d;
-  padding: 20px 0;
 }
 
 .site-footer .widget-area {
@@ -2726,15 +2728,11 @@ footer.entry-meta {
 
 .sidebar .site-footer .widget-area {
   max-width: 724px;
-  position: relative;
-  left: -158px;
 }
 
 .site-footer .widget {
   background: transparent;
   color: #fff;
-  float: left;
-  margin-right: 20px;
 }
 
 .sidebar .site-footer .widget {
@@ -2747,6 +2745,28 @@ footer.entry-meta {
 
 .site-footer .widget a {
   color: white;
+}
+
+ul#menu-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+
+
+.site-footer svg {
+  padding: 0px 0 20px;
+  height: auto;
+  width: 19em;
+}
+
+.site-footer svg #Text path {
+  fill: #382c6d;
+}
+
+.site-footer svg #shapes polygon {
+  fill: white;
 }
 
 .site-footer .widget-title,
@@ -3210,6 +3230,17 @@ footer.entry-meta {
   }
   div.title .site-description {
     display: none;
+  }
+  ul#menu-footer-links {
+    display: block;
+    font-size: 1.2em;
+  }
+  ul#menu-footer-links li {
+    margin-left: .5em;
+    margin-right: .5em;
+  }
+  .widget {
+    padding: 20px 0;
   }
 }
 

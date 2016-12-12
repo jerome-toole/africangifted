@@ -47,3 +47,46 @@ function africangifted_enqueue_scripts() {
   wp_enqueue_script('waypoints-sticky', get_stylesheet_directory_uri() . '/js/sticky.min.js', array('waypoints'));
   wp_enqueue_script('africangifted-functions', get_stylesheet_directory_uri() . '/js/functions.js', array('jquery', 'waypoints' ));
 };
+
+
+
+function child_remove_parent_function() {
+    remove_action( 'wp_enqueue_scripts', 'twentythirteen_scripts_styles' );
+}
+add_action( 'wp_loaded', 'child_remove_parent_function' );
+
+/**
+ * REPLACE TWENTYTHIRTEEN SCRIPTS
+ *
+ * @since Twenty Thirteen 1.0
+ */
+function africangifted_scripts_styles() {
+  /*
+   * Adds JavaScript to pages with the comment form to support
+   * sites with threaded comments (when in use).
+   */
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+    wp_enqueue_script( 'comment-reply' );
+
+  // Loads JavaScript file with functionality specific to Twenty Thirteen.
+  wp_enqueue_script( 'twentythirteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
+
+  // Add Genericons font, used in the main stylesheet.
+  wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.03' );
+
+  // Loads our main stylesheet.
+  wp_enqueue_style( 'twentythirteen-style', get_stylesheet_uri(), array(), '2013-07-18' );
+
+  // Loads the Internet Explorer specific stylesheet.
+  wp_enqueue_style( 'twentythirteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentythirteen-style' ), '2013-07-18' );
+  wp_style_add_data( 'twentythirteen-ie', 'conditional', 'lt IE 9' );
+}
+add_action( 'wp_enqueue_scripts', 'africangifted_scripts_styles' );
+
+
+// YEAR SHORTCODE
+function year_shortcode() {
+  $year = date('Y');
+  return $year;
+}
+add_shortcode('year', 'year_shortcode');
