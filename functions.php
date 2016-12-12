@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'unhook_parent_googlefonts', 20 );
 
 // ADD BITTER AND LATO FONTS
 function wpb_add_google_fonts() {
-wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Bitter:400,700|Lato:400,400i,700,700i', false ); 
+wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i|Playfair+Display', false ); 
 }
 
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
