@@ -28,11 +28,14 @@ get_header(); ?>
             <?php endif; ?>
 
             <h1 class="entry-title"><?php the_title(); ?></h1>
-            <div class="splash-quote">
-              <p>My life has been transformed since the day I entered the African Science Academy. I know my way of thinking and my analysis of situations has improved enormously. Thanks to the training I have received from ASA, I now strive to make a difference wherever I go.</p>
-              <span>AGF Academy Student, 2016</span>
-            </div>
-
+            <?php if ( get_field('splash_quote') ) { ?>
+              <div class="splash-quote">
+                <?php the_field('splash_quote') ?>
+                <?php if ( get_field( 'splash_quote_author' ) ) { ?>
+                  <span><?php the_field('splash_quote_author') ?></span>
+                <?php } ?>
+              </div>
+            <?php }; ?>
           </header><!-- .entry-header -->
 
           <div class="entry-content">
